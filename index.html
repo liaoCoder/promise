@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Promise</title>
+  </head>
+  <body>
+    <script src="index.js"></script>
+    <script>
+      new HD((resolve, reject) => {
+        reject("2123213");
+      })
+        .then((value) => {
+          console.log("then1-", value);
+          return "then1";
+        })
+        .then((value) => {
+          console.log("then2-", value);
+          return "then1";
+        })
+        .catch((reason) => {
+          console.log("catch1-" + reason);
+          return "catch1";
+        })
+        .then((value) => {
+          console.log("then3-", value);
+          return "then1";
+        });
+    </script>
+  </body>
+</html>
